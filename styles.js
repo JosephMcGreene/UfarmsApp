@@ -48,3 +48,28 @@ export const landingStyles = StyleSheet.create({
     justifyContent: "space-around",
   },
 });
+
+export const modalStyles = StyleSheet.create({
+  modalView: {
+    margin: 15,
+    marginTop: 45,
+    backgroundColor: "white",
+    padding: 20,
+    elevation: 5,
+  },
+  h2: {
+    textAlign: "center",
+    fontSize: 20,
+    fontWeight: "bold",
+  },
+  p: {
+    fontSize: 16,
+  },
+  button: {
+    borderWidth: 3,
+    padding: 10,
+    fontSize: 20,
+    textAlign: "center",
+    marginTop: 20,
+  },
+});
