@@ -1,3 +1,4 @@
+import React from 'react';
 import { Modal, View, Alert, Pressable, Text } from "react-native";
 import { modalStyles } from "../styles";
 
