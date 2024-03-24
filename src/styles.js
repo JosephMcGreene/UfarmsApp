@@ -47,6 +47,17 @@ export const landingStyles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "space-around",
   },
+  button: {
+    backgroundColor: "#020617",
+    border: 0,
+    borderRadius: 16,
+    color: '#000',
+    fontSize: 20,
+    marginTop: 24,
+    paddingBottom: 12,
+    paddingTop: 12,
+    width: '100%',
+  }
 });
 
 export const modalStyles = StyleSheet.create({

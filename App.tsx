@@ -1,11 +1,12 @@
 import { useState } from "react";
 import { StatusBar } from "expo-status-bar";
 import { View, Text, Pressable } from "react-native";
-import { landingStyles } from "./styles";
+import { landingStyles } from "src/styles";
+
 //components
-import LandingForm from "./components/LandingForm";
-import ModalTemplate from "./components/ModalTemplate";
-import HostsLandingInfo from "./components/HostsLandingInfo";
+import LandingForm from "src/components/LandingForm";
+import ModalTemplate from "src/components/ModalTemplate";
+import HostsLandingInfo from "src/components/HostsLandingInfo";
 
 export default function App() {
   const [modalShown, setModalShown] = useState(false);

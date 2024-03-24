@@ -1,6 +1,5 @@
-import { useState } from "react";
 import { landingStyles } from "../styles";
-import { View, Text, TextInput, FlatList, Button } from "react-native";
+import { View, Text, TextInput, FlatList, Pressable } from "react-native";
 import BouncyCheckbox from "react-native-bouncy-checkbox";
 
 export default function LandingForm() {
@@ -34,13 +33,13 @@ export default function LandingForm() {
 
       <BouncyCheckbox onPress={() => alert("oh hai")} text="Vegetables" />
 
-      <Button
+      <Pressable
         onPress={() => alert("You pressed me!")}
         style={landingStyles.button}
-        title="Join Waitlist"
-        color="#fff"
         accessibilityLabel="This is a submit button"
-      />
+      >
+        <Text>Join Waitlist</Text>
+      </Pressable>
     </View>
   );
 }
