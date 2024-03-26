@@ -4,7 +4,7 @@ import { modalStyles } from "styles";
 
 export default function ModalTemplate({ modalShown, setModalShown, children }) {
   return (
-    <Modal animationType="slide" transparent={true} visible={modalShown}>
+    <Modal animationType="slide" transparent visible={modalShown}>
       <View style={modalStyles.modalView}>
         {children}
 
