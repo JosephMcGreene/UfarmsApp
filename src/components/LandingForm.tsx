@@ -1,5 +1,5 @@
 import React from 'react';
-import { landingStyles } from "../styles";
+import { landingStyles } from "styles";
 import { View, Text, TextInput, FlatList, Pressable } from "react-native";
 import BouncyCheckbox from "react-native-bouncy-checkbox";
 

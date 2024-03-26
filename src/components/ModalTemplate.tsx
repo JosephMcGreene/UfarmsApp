@@ -1,6 +1,6 @@
 import React from 'react';
-import { Modal, View, Alert, Pressable, Text } from "react-native";
-import { modalStyles } from "../styles";
+import { Modal, View, Pressable, Text } from "react-native";
+import { modalStyles } from "styles";
 
 export default function ModalTemplate({ modalShown, setModalShown, children }) {
   return (

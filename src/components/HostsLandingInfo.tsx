@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, Text, Pressable } from "react-native";
-import { modalStyles } from "../styles";
+import { modalStyles } from "styles";
 
 export default function HostsLandingInfo() {
   return (
