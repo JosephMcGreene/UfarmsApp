@@ -17,11 +17,11 @@ export default function HostsLandingInfo({ quizUrl }) {
         Choose between secure payments, fresh produce, or BOTH
       </p>
 
-      <a href={quizUrl} className="text-xl self-center">
+      <a className="text-xl self-center" href={quizUrl}>
         <button className="bg-white text-black font-bold px-6 py-4 rounded-xl">
           Join the Yard Hosts Waitlist
         </button>
       </a>
     </>
-  );
+  )
 }

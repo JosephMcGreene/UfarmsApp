@@ -1,0 +1,4 @@
+!/.eslintrc.js
+!/.prettierrc.js
+!/.stylelint.js
+node_modules/

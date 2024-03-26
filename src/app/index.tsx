@@ -1,15 +1,13 @@
-import React, { useState } from "react";
-import { StatusBar } from "expo-status-bar";
-import { View, Text, Pressable } from "react-native";
-import { landingStyles } from "styles";
-
-//components
-import LandingForm from "components/LandingForm";
-import ModalTemplate from "components/ModalTemplate";
-import HostsLandingInfo from "components/HostsLandingInfo";
+import React, { useState } from 'react'
+import HostsLandingInfo from 'components/HostsLandingInfo'
+import LandingForm from 'components/LandingForm'
+import ModalTemplate from 'components/ModalTemplate'
+import { StatusBar } from 'expo-status-bar'
+import { Pressable, Text, View } from 'react-native'
+import { landingStyles } from 'styles'
 
 export default function App() {
-  const [modalShown, setModalShown] = useState(false);
+  const [modalShown, setModalShown] = useState(false)
 
   return (
     <View style={landingStyles.container}>
@@ -22,7 +20,7 @@ export default function App() {
       <LandingForm />
       <Text style={landingStyles.h2}>Info:</Text>
       <View style={landingStyles.btnsContainer}>
-        <Pressable onPress={() => alert("Button for farmers")}>
+        <Pressable onPress={() => alert('Button for farmers')}>
           <Text style={landingStyles.h3}>For Farmers</Text>
         </Pressable>
         <Pressable onPress={() => setModalShown(true)}>
@@ -35,5 +33,5 @@ export default function App() {
         <HostsLandingInfo />
       </ModalTemplate>
     </View>
-  );
+  )
 }

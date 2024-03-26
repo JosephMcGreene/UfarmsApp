@@ -1,12 +1,11 @@
-import { CardElement, PaymentElement } from "@stripe/react-stripe-js";
+import { CardElement, PaymentElement } from '@stripe/react-stripe-js'
 
 export default function CheckoutForm() {
   return (
     <form
-      className="bg-white p-4 mt-4"
       action="/create-checkout-session"
-      method="POST"
-    >
+      className="bg-white p-4 mt-4"
+      method="POST">
       <CardElement />
       {/* <PaymentElement /> */}
 
@@ -14,5 +13,5 @@ export default function CheckoutForm() {
         Check Out
       </button>
     </form>
-  );
+  )
 }

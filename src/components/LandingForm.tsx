@@ -1,17 +1,17 @@
-import React from 'react';
-import { landingStyles } from "styles";
-import { View, Text, TextInput, FlatList, Pressable } from "react-native";
-import BouncyCheckbox from "react-native-bouncy-checkbox";
+import React from 'react'
+import { FlatList, Pressable, Text, TextInput, View } from 'react-native'
+import BouncyCheckbox from 'react-native-bouncy-checkbox'
+import { landingStyles } from 'styles'
 
 export default function LandingForm() {
   const produceTypes = [
-    "Berries",
-    "Greens",
-    "Herbs",
-    "Flowers",
-    "Vegetables",
-    "Other",
-  ];
+    'Berries',
+    'Greens',
+    'Herbs',
+    'Flowers',
+    'Vegetables',
+    'Other'
+  ]
 
   return (
     <View style={landingStyles.form}>
@@ -28,19 +28,18 @@ export default function LandingForm() {
       <FlatList
         data={produceTypes}
         renderItem={({ item }) => (
-          <BouncyCheckbox onPress={() => alert("oh hai")} text={item} />
+          <BouncyCheckbox onPress={() => alert('oh hai')} text={item} />
         )}
       />
 
-      <BouncyCheckbox onPress={() => alert("oh hai")} text="Vegetables" />
+      <BouncyCheckbox onPress={() => alert('oh hai')} text="Vegetables" />
 
       <Pressable
-        onPress={() => alert("You pressed me!")}
-        style={landingStyles.button}
         accessibilityLabel="This is a submit button"
-      >
+        onPress={() => alert('You pressed me!')}
+        style={landingStyles.button}>
         <Text>Join Waitlist</Text>
       </Pressable>
     </View>
-  );
+  )
 }
