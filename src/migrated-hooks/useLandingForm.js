@@ -1,18 +1,18 @@
-import { useState } from "react";
-import axios from "axios";
+import { useState } from 'react'
+import axios from 'axios'
 
 export default function useLandingForm() {
-  const [zipcode, setZipcode] = useState("");
-  const [email, setEmail] = useState("");
-  const [produceType, setProduceType] = useState([]);
+  const [zipcode, setZipcode] = useState('')
+  const [email, setEmail] = useState('')
+  const [produceType, setProduceType] = useState([])
   // const [otherExplanation, setOtherExplanation] = useState("");
 
   const bundledData = {
-    zipcode,
     email,
     produceType,
+    zipcode
     // otherExplanation,
-  };
+  }
 
   /**
    * Takes a state setter (ie, setEmail), and the value the state should be updated to,
@@ -22,13 +22,13 @@ export default function useLandingForm() {
    * @param {Object}   eventTarget the DOM event target the state is being updated to
    */
   function setState(setter, eventTarget) {
-    setter(eventTarget);
+    setter(eventTarget)
   }
-  /* These are also added to avoid a long return array length. 
-  Just return setState as an object and access these functions as properties, 
+  /* These are also added to avoid a long return array length.
+  Just return setState as an object and access these functions as properties,
   which we can pass as first arguments TO setState in LandingForm.jsx */
-  setState.setZipcode = setZipcode;
-  setState.setEmail = setEmail;
+  setState.setZipcode = setZipcode
+  setState.setEmail = setEmail
   // setState.setOtherExplanation = setOtherExplanation;
 
   /**
@@ -39,11 +39,11 @@ export default function useLandingForm() {
   function handleProduceArray(target) {
     // Condition refers to state of the checkbox once the user clicks on it
     if (target.checked) {
-      setProduceType((prevProduce) => [...prevProduce, target.value]);
+      setProduceType(prevProduce => [...prevProduce, target.value])
     } else {
-      setProduceType((prevProduce) =>
-        prevProduce.filter((item) => item !== target.value)
-      );
+      setProduceType(prevProduce =>
+        prevProduce.filter(item => item !== target.value)
+      )
     }
   }
 
@@ -53,20 +53,20 @@ export default function useLandingForm() {
    * @param {Object} e The event object from the submit button, used to prevent default action
    */
   async function submitForm(e) {
-    e.preventDefault();
+    e.preventDefault()
 
     const response = await axios({
-      url: "https://ufarms-backend-458b111e2b29.herokuapp.com/api/submit_form",
-      method: "post",
       data: bundledData,
       headers: {
-        "Content-Type": "application/json",
-        Accept: "application/json",
+        Accept: 'application/json',
+        'Content-Type': 'application/json'
       },
-    });
+      method: 'post',
+      url: 'https://ufarms-backend-458b111e2b29.herokuapp.com/api/submit_form'
+    })
 
-    console.log(response);
+    console.log(response)
   }
 
-  return [bundledData, setState, handleProduceArray, submitForm];
+  return [bundledData, setState, handleProduceArray, submitForm]
 }

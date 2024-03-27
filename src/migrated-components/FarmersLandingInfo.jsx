@@ -21,11 +21,11 @@ export default function FarmersLandingInfo({ quizUrl }) {
         Grow your own food while connecting with new friends.
       </p>
 
-      <a href={quizUrl} className="text-xl self-center">
+      <a className="text-xl self-center" href={quizUrl}>
         <button className="bg-white text-black font-bold px-6 py-4 rounded-xl">
           Take the Quiz
         </button>
       </a>
     </>
-  );
+  )
 }

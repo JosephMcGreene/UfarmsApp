@@ -1,95 +1,95 @@
-import useLandingForm from "../hooks/useLandingForm";
+import useLandingForm from '../hooks/useLandingForm'
 
 export default function LandingForm() {
-  const [state, setState, handleProduceArray, submitForm] = useLandingForm();
-  const { setZipcode, setEmail } = setState;
+  const [state, setState, handleProduceArray, submitForm] = useLandingForm()
+  const { setZipcode, setEmail } = setState
 
   return (
     <form className="flex flex-col items-start">
       <div className="flex justify-between w-full">
         <label htmlFor="zipcode">Zip Code: </label>
         <input
-          type="text"
-          name="zipcode"
           id="zipcode"
-          value={state.zipcode}
+          name="zipcode"
+          onChange={e => setState(setZipcode, e.target.value)}
           placeholder="12345"
-          onChange={(e) => setState(setZipcode, e.target.value)}
+          type="text"
+          value={state.zipcode}
         />
       </div>
       <div className="flex justify-between w-full">
         <label htmlFor="email">Email: </label>
         <input
-          type="email"
-          name="email"
           id="email"
-          value={state.email}
+          name="email"
+          onChange={e => setState(setEmail, e.target.value)}
           placeholder="example@farm.com"
-          onChange={(e) => setState(setEmail, e.target.value)}
+          type="email"
+          value={state.email}
         />
       </div>
 
       <h4 className="text-xl mt-6">I want to grow:</h4>
       <h4 className="mb-2">(Select all that apply)</h4>
 
-      <label htmlFor="berries" className="ml-4 cursor-pointer">
+      <label className="ml-4 cursor-pointer" htmlFor="berries">
         <input
-          type="checkbox"
-          name="berries"
           id="berries"
+          name="berries"
+          onClick={e => handleProduceArray(e.target)}
+          type="checkbox"
           value="Berries"
-          onClick={(e) => handleProduceArray(e.target)}
-        />{" "}
+        />{' '}
         Berries
       </label>
-      <label htmlFor="greens" className="ml-4 cursor-pointer">
+      <label className="ml-4 cursor-pointer" htmlFor="greens">
         <input
-          type="checkbox"
-          name="greens"
           id="greens"
+          name="greens"
+          onClick={e => handleProduceArray(e.target)}
+          type="checkbox"
           value="Greens"
-          onClick={(e) => handleProduceArray(e.target)}
-        />{" "}
+        />{' '}
         Greens
       </label>
-      <label htmlFor="herbs" className="ml-4 cursor-pointer">
+      <label className="ml-4 cursor-pointer" htmlFor="herbs">
         <input
-          type="checkbox"
-          name="herbs"
           id="herbs"
+          name="herbs"
+          onClick={e => handleProduceArray(e.target)}
+          type="checkbox"
           value="Herbs"
-          onClick={(e) => handleProduceArray(e.target)}
-        />{" "}
+        />{' '}
         Herbs
       </label>
-      <label htmlFor="flowers" className="ml-4 cursor-pointer">
+      <label className="ml-4 cursor-pointer" htmlFor="flowers">
         <input
-          type="checkbox"
-          name="flowers"
           id="flowers"
+          name="flowers"
+          onClick={e => handleProduceArray(e.target)}
+          type="checkbox"
           value="Flowers"
-          onClick={(e) => handleProduceArray(e.target)}
-        />{" "}
+        />{' '}
         Flowers
       </label>
-      <label htmlFor="vegetables" className="ml-4 cursor-pointer">
+      <label className="ml-4 cursor-pointer" htmlFor="vegetables">
         <input
-          type="checkbox"
-          name="vegetables"
           id="vegetables"
+          name="vegetables"
+          onClick={e => handleProduceArray(e.target)}
+          type="checkbox"
           value="Vegetables"
-          onClick={(e) => handleProduceArray(e.target)}
-        />{" "}
+        />{' '}
         Vegetables
       </label>
-      <label htmlFor="other" className="ml-4 cursor-pointer">
+      <label className="ml-4 cursor-pointer" htmlFor="other">
         <input
-          type="checkbox"
-          name="other"
           id="other"
+          name="other"
+          onClick={e => handleProduceArray(e.target)}
+          type="checkbox"
           value="Other"
-          onClick={(e) => handleProduceArray(e.target)}
-        />{" "}
+        />{' '}
         Other
       </label>
 
@@ -106,12 +106,11 @@ export default function LandingForm() {
       </label> */}
 
       <button
-        type="submit"
         className="bg-slate-100 text-black text-xl w-full mt-6 rounded-2xl border-0 py-3"
-        onClick={(e) => submitForm(e)}
-      >
+        onClick={e => submitForm(e)}
+        type="submit">
         Join Waitlist
       </button>
     </form>
-  );
+  )
 }

@@ -1,5 +1,6 @@
-import { View, Text, Pressable } from "react-native";
-import { modalStyles } from "../styles";
+import React from 'react'
+import { Pressable, Text, View } from 'react-native'
+import { modalStyles } from 'styles'
 
 export default function HostsLandingInfo() {
   return (
@@ -24,5 +25,5 @@ export default function HostsLandingInfo() {
         <Text style={modalStyles.h2}>Join the Yard Hosts Waitlist</Text>
       </Pressable>
     </View>
-  );
+  )
 }
