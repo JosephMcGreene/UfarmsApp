@@ -1,20 +1,12 @@
 import React from 'react'
-import { FlatList, Pressable, Text, TextInput, View } from 'react-native'
+import { useForm } from 'react-hook-form'
+import { Pressable, SafeAreaView, Text, TextInput } from 'react-native'
 import BouncyCheckbox from 'react-native-bouncy-checkbox'
 import { landingStyles } from 'styles'
 
 export default function LandingForm() {
-  const produceTypes: string[] = [
-    'Berries',
-    'Greens',
-    'Herbs',
-    'Flowers',
-    'Vegetables',
-    'Other'
-  ]
-
   return (
-    <View style={landingStyles.form}>
+    <SafeAreaView style={landingStyles.form}>
       <Text style={landingStyles.label}>Zip Code:</Text>
       <TextInput style={landingStyles.input} />
 
@@ -25,19 +17,19 @@ export default function LandingForm() {
         I want to grow (Select all that apply):
       </Text>
 
-      <FlatList
-        data={produceTypes}
-        renderItem={({ item }) => (
-          <BouncyCheckbox onPress={() => alert('oh hai')} text={item} />
-        )}
-      />
+      <BouncyCheckbox text="Berries" />
+      <BouncyCheckbox text="Greens" />
+      <BouncyCheckbox text="Herbs" />
+      <BouncyCheckbox text="Flowers" />
+      <BouncyCheckbox text="Vegetables" />
+      <BouncyCheckbox text="Other" />
 
       <Pressable
         accessibilityLabel="This is a submit button"
-        onPress={() => alert('You pressed me!')}
+        onPress={() => console.log({ hello: 'world' })}
         style={landingStyles.button}>
-        <Text>Join Waitlist</Text>
+        <Text style={landingStyles.h3}>Join Waitlist</Text>
       </Pressable>
-    </View>
+    </SafeAreaView>
   )
 }

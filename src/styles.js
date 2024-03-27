@@ -5,17 +5,15 @@ export const landingStyles = StyleSheet.create({
     width: '100%'
   },
   button: {
-    backgroundColor: 'white',
-    borderWidth: 3,
-    fontSize: 20,
+    backgroundColor: '#000',
     marginLeft: 'auto',
     marginRight: 'auto',
     marginTop: 20,
-    padding: 10,
-    width: '50%'
+    width: '100%'
   },
   container: {
-    backgroundColor: '#242424'
+    backgroundColor: '#242424',
+    padding: 12
   },
   form: {
     marginBottom: 20,
