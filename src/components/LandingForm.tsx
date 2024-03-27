@@ -4,7 +4,7 @@ import BouncyCheckbox from 'react-native-bouncy-checkbox'
 import { landingStyles } from 'styles'
 
 export default function LandingForm() {
-  const produceTypes = [
+  const produceTypes: string[] = [
     'Berries',
     'Greens',
     'Herbs',

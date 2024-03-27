@@ -7,7 +7,7 @@ import { Pressable, Text, View } from 'react-native'
 import { landingStyles } from 'styles'
 
 export default function App() {
-  const [modalShown, setModalShown] = useState(false)
+  const [modalShown, setmodalShown] = useState(false)
 
   return (
     <View style={landingStyles.container}>
@@ -23,13 +23,13 @@ export default function App() {
         <Pressable onPress={() => alert('Button for farmers')}>
           <Text style={landingStyles.h3}>For Farmers</Text>
         </Pressable>
-        <Pressable onPress={() => setModalShown(true)}>
+        <Pressable onPress={() => setmodalShown(true)}>
           <Text style={landingStyles.h3}>For Hosts</Text>
         </Pressable>
       </View>
       <StatusBar style="auto" />
 
-      <ModalTemplate modalShown={modalShown} setModalShown={setModalShown}>
+      <ModalTemplate modalShown={modalShown} setmodalShown={setmodalShown}>
         <HostsLandingInfo />
       </ModalTemplate>
     </View>
