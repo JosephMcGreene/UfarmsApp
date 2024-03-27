@@ -32,8 +32,6 @@ export default function LandingForm() {
         )}
       />
 
-      <BouncyCheckbox onPress={() => alert('oh hai')} text="Vegetables" />
-
       <Pressable
         accessibilityLabel="This is a submit button"
         onPress={() => alert('You pressed me!')}

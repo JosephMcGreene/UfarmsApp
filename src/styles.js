@@ -2,26 +2,20 @@ import { StyleSheet } from 'react-native'
 
 export const landingStyles = StyleSheet.create({
   btnsContainer: {
-    flexDirection: 'row',
-    justifyContent: 'space-around',
     width: '100%'
   },
   button: {
-    backgroundColor: '#020617',
-    border: 0,
-    borderRadius: 16,
-    color: '#000',
+    backgroundColor: 'white',
+    borderWidth: 3,
     fontSize: 20,
-    marginTop: 24,
-    paddingBottom: 12,
-    paddingTop: 12,
-    width: '100%'
+    marginLeft: 'auto',
+    marginRight: 'auto',
+    marginTop: 20,
+    padding: 10,
+    width: '50%'
   },
   container: {
-    alignItems: 'center',
-    backgroundColor: '#242424',
-    flex: 1,
-    justifyContent: 'center'
+    backgroundColor: '#242424'
   },
   form: {
     marginBottom: 20,

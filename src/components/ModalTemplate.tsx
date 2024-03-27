@@ -4,13 +4,13 @@ import { modalStyles } from 'styles'
 
 interface ModalTemplateProps {
   modalShown: boolean
-  setmodalShown: (modalShown: boolean) => void
+  setModalShown: (modalShown: boolean) => void
   children: React.ReactNode
 }
 
 export default function ModalTemplate({
   modalShown,
-  setmodalShown,
+  setModalShown,
   children
 }: ModalTemplateProps) {
   return (
@@ -18,7 +18,7 @@ export default function ModalTemplate({
       <View style={modalStyles.modalView}>
         {children}
         <Pressable
-          onPress={() => setmodalShown(!modalShown)}
+          onPress={() => setModalShown(!modalShown)}
           style={modalStyles.button}>
           <Text style={modalStyles.h2}>Close</Text>
         </Pressable>

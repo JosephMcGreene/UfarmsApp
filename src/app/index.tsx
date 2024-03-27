@@ -1,16 +1,17 @@
 import React, { useState } from 'react'
+import FarmersLandingInfo from 'components/FarmersLandingInfo'
 import HostsLandingInfo from 'components/HostsLandingInfo'
 import LandingForm from 'components/LandingForm'
 import ModalTemplate from 'components/ModalTemplate'
-import { StatusBar } from 'expo-status-bar'
-import { Pressable, Text, View } from 'react-native'
+import { Pressable, ScrollView, Text, View } from 'react-native'
 import { landingStyles } from 'styles'
 
 export default function App() {
-  const [modalShown, setmodalShown] = useState(false)
+  const [hostInfoShown, setHostInfoShown] = useState(false)
+  const [farmerInfoShown, setFarmerInfoShown] = useState(false)
 
   return (
-    <View style={landingStyles.container}>
+    <ScrollView style={landingStyles.container}>
       <Text style={landingStyles.h1}>Ufarms</Text>
       <Text style={landingStyles.h2}>Grow Your Own Crops</Text>
       <Text style={landingStyles.h3}>
@@ -18,20 +19,28 @@ export default function App() {
       </Text>
 
       <LandingForm />
+
       <Text style={landingStyles.h2}>Info:</Text>
       <View style={landingStyles.btnsContainer}>
-        <Pressable onPress={() => alert('Button for farmers')}>
+        <Pressable onPress={() => setFarmerInfoShown(true)}>
           <Text style={landingStyles.h3}>For Farmers</Text>
         </Pressable>
-        <Pressable onPress={() => setmodalShown(true)}>
+        <Pressable onPress={() => setHostInfoShown(true)}>
           <Text style={landingStyles.h3}>For Hosts</Text>
         </Pressable>
       </View>
-      <StatusBar style="auto" />
 
-      <ModalTemplate modalShown={modalShown} setmodalShown={setmodalShown}>
+      <ModalTemplate
+        modalShown={farmerInfoShown}
+        setModalShown={setFarmerInfoShown}>
+        <FarmersLandingInfo />
+      </ModalTemplate>
+
+      <ModalTemplate
+        modalShown={hostInfoShown}
+        setModalShown={setHostInfoShown}>
         <HostsLandingInfo />
       </ModalTemplate>
-    </View>
+    </ScrollView>
   )
 }

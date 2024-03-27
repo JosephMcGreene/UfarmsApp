@@ -1,4 +1,4 @@
-<h1> Ufarms Client </h1>
+<h1> Ufarms </h1>
 
 <h2>Developers</h2>
 <ol>
