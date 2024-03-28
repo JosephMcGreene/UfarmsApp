@@ -1,13 +1,19 @@
 import React, { useState } from 'react'
+// * https://react-hook-form.com/
 import { Controller, useForm } from 'react-hook-form'
 import { Pressable, SafeAreaView, Text, TextInput } from 'react-native'
-import BouncyCheckbox from 'react-native-bouncy-checkbox'
+// * If we don't like this checkbox: https://reactnative.directory/?search=checkbox
 import CheckBox from 'react-native-check-box'
 import { landingStyles } from 'styles'
 
+interface formData {
+  email: string
+  produceTypes?: string[]
+  zipcode: string
+}
+
 export default function LandingForm() {
   const [isChecked, setIsChecked] = useState(false)
-  const [isBouncyChecked, setIsBouncyChecked] = useState(false)
 
   const {
     control,
@@ -20,8 +26,15 @@ export default function LandingForm() {
     },
   })
 
-  async function submit(data) {
+  /**
+   * Currently, logs the form data for email and zipcode to the Expo console. Will need to be updated to make a POST request to UfarmsServer
+   *
+   * @param {Object} data the data to be POSTed
+   */
+  async function submit(data: formData) {
     console.log(data)
+
+    // TODO make POST request to our backend route
   }
 
   return (
@@ -63,24 +76,44 @@ export default function LandingForm() {
       <Text style={landingStyles.h3}>
         I want to grow (Select all that apply):
       </Text>
-      {/* TODO It seems that React-Native doesn't have its own coire component for a checkbox, instead relying on community creators, so we need to decide which checkboxes to use for our forms:
-      https://reactnative.directory/?search=checkbox */}
-      {/* https://github.com/WrathChaos/react-native-bouncy-checkbox */}
-      <BouncyCheckbox text="Berries" />
-      <BouncyCheckbox text="Greens" />
-      <BouncyCheckbox text="Herbs" />
-      <BouncyCheckbox text="Flowers" />
-      <BouncyCheckbox text="Vegetables" />
-      <BouncyCheckbox text="Other" />
 
-      {/* https://www.npmjs.com/package/react-native-check-box */}
-      <CheckBox
+      {/* ! Important note: Joseph stopped mid-way through adding functionality to these checkboxes until we know exactly what needs to go on this form */}
+      {/* <CheckBox
         checkBoxColor="white"
         isChecked={isChecked}
         onClick={() => setIsChecked(!isChecked)}
         rightText="Berries"
         rightTextStyle={{ color: 'white' }}
       />
+      <CheckBox
+        checkBoxColor="white"
+        isChecked={isChecked}
+        onClick={() => setIsChecked(!isChecked)}
+        rightText="Herbs"
+        rightTextStyle={{ color: 'white' }}
+      />
+      <CheckBox
+        checkBoxColor="white"
+        isChecked={isChecked}
+        onClick={() => setIsChecked(!isChecked)}
+        rightText="Flowers"
+        rightTextStyle={{ color: 'white' }}
+      />
+      <CheckBox
+        checkBoxColor="white"
+        isChecked={isChecked}
+        onClick={() => setIsChecked(!isChecked)}
+        rightText="Vegetables"
+        rightTextStyle={{ color: 'white' }}
+      />
+      <CheckBox
+        checkBoxColor="white"
+        isChecked={isChecked}
+        onClick={() => setIsChecked(!isChecked)}
+        rightText="Other"
+        rightTextStyle={{ color: 'white' }}
+      /> */}
+
       <Pressable
         accessibilityLabel="This is a submit button"
         onPress={handleSubmit(submit)}

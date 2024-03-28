@@ -3,7 +3,7 @@ import FarmersLandingInfo from 'components/FarmersLandingInfo'
 import HostsLandingInfo from 'components/HostsLandingInfo'
 import LandingForm from 'components/LandingForm'
 import ModalTemplate from 'components/ModalTemplate'
-import { Pressable, ScrollView, Text, View } from 'react-native'
+import { Pressable, SafeAreaView, Text, View } from 'react-native'
 import { landingStyles } from 'styles'
 
 export default function App() {
@@ -11,7 +11,7 @@ export default function App() {
   const [farmerInfoShown, setFarmerInfoShown] = useState(false)
 
   return (
-    <ScrollView style={landingStyles.container}>
+    <SafeAreaView style={landingStyles.container}>
       <Text style={landingStyles.h1}>Ufarms</Text>
       <Text style={landingStyles.h2}>Grow Your Own Crops</Text>
       <Text style={landingStyles.h3}>
@@ -41,6 +41,6 @@ export default function App() {
         setModalShown={setHostInfoShown}>
         <HostsLandingInfo />
       </ModalTemplate>
-    </ScrollView>
+    </SafeAreaView>
   )
 }

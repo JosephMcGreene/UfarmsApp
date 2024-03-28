@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import axios from 'axios'
 
-interface bundledData {
+interface dataToSubmit {
   email: string
   produceType: string[]
   zipcode: string
@@ -12,7 +12,7 @@ export default function useLandingForm() {
   const [email, setEmail] = useState('')
   const [produceType, setProduceType] = useState([])
 
-  const bundledData: bundledData = {
+  const dataToSubmit: dataToSubmit = {
     email,
     produceType,
     zipcode,
@@ -27,9 +27,7 @@ export default function useLandingForm() {
   function setState(setter, eventTarget) {
     setter(eventTarget)
   }
-  /* These are added to avoid a long return array length.
-  Just return setState as an object and access these functions as properties,
-  which we can pass as first arguments TO setState in LandingForm.tsx */
+  // *These are added to avoid a long return array length. Just return setState as an object and access these functions as properties, which we can pass as first arguments TO setState in LandingForm.tsx
   setState.setZipcode = setZipcode
   setState.setEmail = setEmail
 
@@ -57,8 +55,8 @@ export default function useLandingForm() {
   async function submitForm(e) {
     e.preventDefault()
 
-    await axios({
-      data: bundledData,
+    const response = await axios({
+      data: dataToSubmit,
       headers: {
         Accept: 'application/json',
         'Content-Type': 'application/json',
@@ -66,6 +64,8 @@ export default function useLandingForm() {
       method: 'post',
       url: 'https://ufarms-backend-458b111e2b29.herokuapp.com/api/submit_form',
     })
+
+    console.log(response)
   }
 
   return [setState, handleProduceArray, submitForm]
