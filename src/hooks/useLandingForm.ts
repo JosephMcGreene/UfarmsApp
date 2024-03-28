@@ -15,7 +15,7 @@ export default function useLandingForm() {
   const bundledData: bundledData = {
     email,
     produceType,
-    zipcode
+    zipcode,
   }
 
   /**
@@ -27,7 +27,7 @@ export default function useLandingForm() {
   function setState(setter, eventTarget) {
     setter(eventTarget)
   }
-  /* These are also added to avoid a long return array length.
+  /* These are added to avoid a long return array length.
   Just return setState as an object and access these functions as properties,
   which we can pass as first arguments TO setState in LandingForm.tsx */
   setState.setZipcode = setZipcode
@@ -44,7 +44,7 @@ export default function useLandingForm() {
       setProduceType(prevProduce => [...prevProduce, target.value])
     } else {
       setProduceType(prevProduce =>
-        prevProduce.filter(item => item !== target.value)
+        prevProduce.filter(item => item !== target.value),
       )
     }
   }
@@ -61,10 +61,10 @@ export default function useLandingForm() {
       data: bundledData,
       headers: {
         Accept: 'application/json',
-        'Content-Type': 'application/json'
+        'Content-Type': 'application/json',
       },
       method: 'post',
-      url: 'https://ufarms-backend-458b111e2b29.herokuapp.com/api/submit_form'
+      url: 'https://ufarms-backend-458b111e2b29.herokuapp.com/api/submit_form',
     })
   }
 
